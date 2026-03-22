@@ -1,44 +1,51 @@
-# Exp.No:21  
-## Constructors - Parameterized Constructor
+# Exp.No:22  
+## Destructor
 
 ---
 
 ### AIM  
-To write a Python code to create a class for a person with a parameterized constructor, which will take the `name` and `userid` of the person as parameters and print the `userid` of the person.
+To create a Python class `Student` with a destructor.
 
 ---
 
 ### ALGORITHM
 
 1. Begin the program.  
-2. Define a `person` class.  
-3. The `person` class should have a parameterized `__init__` method that accepts two parameters: `name` and `userid`.  
-4. Inside the `__init__` method, assign the `name` to `self.name` and the `userid` to `self.userid`.  
-5. Print the `self.userid`.  
-6. Prompt the user to enter their `name` (string) and `userid`.  
-7. Create an instance `s1` of the `person` class by passing the entered `name` and `userid` to the constructor.  
-8. Terminate the program.
+2. Define the `student` class.  
+3. Inside the `student` class, define the `__init__` method (constructor) and the `__del__` method (destructor).  
+4. Create an object `s2` of the `student` class. When the object `s2` is created, the `__init__` method is called, and its print statements are executed.  
+5. Use the `del` statement to delete the object `s2`. This triggers the `__del__` method (destructor), and the respective print statements are executed.  
+6. Terminate the program.
 
 ---
 
 ### PROGRAM
+
 ```
 
-class person:
-    def __init__(self,id,name):
-         self.id=id
-         self.name=name
-    def display(self):
-        print("Hello my id is :",id)
-        print("My name is :",name)
-id=int(input())
-name=input()
-c=person(name,id)
-c.display()
+class Student:
+
+    # constructor
+    def __init__(self, name):
+        print('Inside Constructor')
+        self.name = name
+        print('Object initialized')
+
+    def show(self):
+        print('Hello, my name is', self.name)
+    def __del__(self):
+        print("Inside destructor\nObject destroyed")
+# create object
+s1 = Student('Emma')
+s1.show()
+
+# delete object
+del s1
 ```
 
 ### OUTPUT
-<img width="822" height="208" alt="image" src="https://github.com/user-attachments/assets/837560a1-7ed7-49c3-8455-8bce6d836c01" />
+
+<img width="687" height="268" alt="image" src="https://github.com/user-attachments/assets/dfa74aef-6f46-4fbd-b7ed-dfb855483752" />
 
 ### RESULT
-Thus a python program to create a class for a person with a parameterized constructorhas been successfully implemented.
+Thus Add the destructor in the following python code to delete the instance of the class has been successfully implemented.
